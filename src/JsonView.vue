@@ -37,7 +37,7 @@
 
         <template v-else>
           <span class="val">
-            <input type="text" type="password" v-model="item.remark" class="val-input" v-if="item.type == 'string'">
+            <input type="password" v-model="item.remark" class="val-input" v-if="item.type == 'string'">
             <input
               type="number"
               v-model.number="item.remark"
