@@ -1,5 +1,7 @@
 # Vue-Json-Edit
 
+This is a simple update to hide certain fields' values ("secret" and "password")
+
 > visual JSON editor built as an vue component. Provides a basic GUI
 
 

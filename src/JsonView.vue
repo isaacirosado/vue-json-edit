@@ -37,7 +37,7 @@
 
         <template v-else>
           <span class="val">
-            <input :type="item.name === 'password' ? 'password' : 'text'" v-model="item.remark" class="val-input" v-if="item.type == 'string'">
+            <input :type="isPasswordField(item.name) ? 'password' : 'text'" v-model="item.remark" class="val-input" v-if="item.type == 'string'">
             <input
               type="number"
               v-model.number="item.remark"
@@ -79,7 +79,6 @@ export default {
       hideMyBlock: {}
     };
   },
-
   created: function() {
     this.flowData = this.parsedData;
   },
@@ -145,6 +144,10 @@ export default {
         item.name = "null";
         e.target.focus();
       }
+    },
+
+    isPasswordField(name) {
+    	return name.match(/.*password.*/) || name.match(/.*secret.*/);
     }
   }
 };
